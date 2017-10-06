@@ -69,6 +69,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         p2View.rotate(angle: 180)
+        
+        p1UndoButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
+        p1ClearButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
+        p2UndoButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
+        p2ClearButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
     }
 
     override func didReceiveMemoryWarning() {
