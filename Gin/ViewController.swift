@@ -60,7 +60,6 @@ class ViewController: UIViewController {
     var p1Calc: Bool = true
     
     var p1Undos: IntStack = IntStack()
-    
     var p2Undos: IntStack = IntStack()
     
     // Control Functions
@@ -93,23 +92,30 @@ class ViewController: UIViewController {
         calcOverlay.hidden = false
     }
     func undoTapped(p1: Bool) {
-        var undos = p1 ? p1Undos : p2Undos
         let undoButton = p1 ? p1UndoButton : p2UndoButton
         let first = p1 ? p1First : p2First
         
-        let num = undos.pop()
+        var num = 0
+        if p1 {
+            num = p1Undos.pop()
+        } else  {
+            num = p2Undos.pop()
+        }
         first.text = String(format: numFormat, Int(first.text!)! - num)
-        if undos.isEmpty() {
+        if (p1 ? p1Undos : p2Undos).isEmpty() {
             undoButton.enabled = false
         }
     }
     func clearTapped(p1: Bool) {
-        var undos = p1 ? p1Undos : p2Undos
         let undoButton = p1 ? p1UndoButton : p2UndoButton
         let first = p1 ? p1First : p2First
         
         first.text = String(format: numFormat, 000)
-        undos.clear()
+        if p1 {
+            p1Undos.clear()
+        } else  {
+            p2Undos.clear()
+        }
         undoButton.enabled = false
     }
     
@@ -128,7 +134,6 @@ class ViewController: UIViewController {
         calcDisplay.text = String(format: numFormat, (Int(calcDisplay.text!)!*10 + num) % 1000)
     }
     @IBAction func calcSubmitTapped(sender: AnyObject) {
-        var undos = p1Calc ? p1Undos : p2Undos
         let undoButton = p1Calc ? p1UndoButton : p2UndoButton
         let first = p1Calc ? p1First : p2First
         
@@ -136,7 +141,11 @@ class ViewController: UIViewController {
         
         let num = Int(calcDisplay.text!)!
         first.text = String(format: numFormat, Int(first.text!)! + num)
-        undos.push(num)
+        if p1Calc {
+            p1Undos.push(num)
+        } else  {
+            p2Undos.push(num)
+        }
         if !undoButton.enabled {
             undoButton.enabled = true
         }
