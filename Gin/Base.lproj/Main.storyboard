@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -18,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dca-NV-9Sf">
+                            <view opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dca-NV-9Sf">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvs-VE-9YD">
@@ -124,19 +126,42 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goD-yJ-Urv">
+                            <view opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goD-yJ-Urv">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.69803921568627447" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCy-Rl-dge">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mCy-Rl-dge" secondAttribute="height" multiplier="3:4" id="7K4-8R-dhn"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7K4-8R-dhn"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="7K4-8R-dhn"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="goD-yJ-Urv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="0Br-dX-wUs"/>
+                            <constraint firstItem="mCy-Rl-dge" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="BXj-ZG-w5p"/>
+                            <constraint firstItem="mCy-Rl-dge" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="BpE-9P-wIo"/>
                             <constraint firstItem="dca-NV-9Sf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Qqe-w6-ahO"/>
                             <constraint firstItem="dca-NV-9Sf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TCR-cf-Hgs"/>
+                            <constraint firstItem="mCy-Rl-dge" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XCR-NU-4Xp"/>
                             <constraint firstItem="dca-NV-9Sf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="XPL-16-k9n"/>
                             <constraint firstItem="goD-yJ-Urv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Xgr-re-LYX"/>
                             <constraint firstItem="goD-yJ-Urv" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="aow-re-iet"/>
+                            <constraint firstItem="mCy-Rl-dge" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cqV-vT-Pfu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mCy-Rl-dge" secondAttribute="trailing" constant="80" id="dTc-Za-frz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mCy-Rl-dge" secondAttribute="bottom" constant="80" id="e2r-oC-7KV"/>
                             <constraint firstItem="goD-yJ-Urv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lo0-7i-y63"/>
                             <constraint firstItem="dca-NV-9Sf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="rTT-ku-Uty"/>
                         </constraints>
@@ -144,32 +169,46 @@
                             <mask key="subviews">
                                 <exclude reference="dca-NV-9Sf"/>
                                 <exclude reference="goD-yJ-Urv"/>
+                                <exclude reference="mCy-Rl-dge"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Qqe-w6-ahO"/>
-                                <exclude reference="TCR-cf-Hgs"/>
-                                <exclude reference="XPL-16-k9n"/>
-                                <exclude reference="rTT-ku-Uty"/>
+                                <exclude reference="BXj-ZG-w5p"/>
+                                <exclude reference="BpE-9P-wIo"/>
+                                <exclude reference="XCR-NU-4Xp"/>
+                                <exclude reference="cqV-vT-Pfu"/>
+                                <exclude reference="dTc-Za-frz"/>
                                 <exclude reference="0Br-dX-wUs"/>
                                 <exclude reference="Xgr-re-LYX"/>
                                 <exclude reference="aow-re-iet"/>
                                 <exclude reference="lo0-7i-y63"/>
+                                <exclude reference="Qqe-w6-ahO"/>
+                                <exclude reference="TCR-cf-Hgs"/>
+                                <exclude reference="XPL-16-k9n"/>
+                                <exclude reference="rTT-ku-Uty"/>
+                                <exclude reference="e2r-oC-7KV"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="dca-NV-9Sf"/>
                                 <include reference="goD-yJ-Urv"/>
+                                <include reference="mCy-Rl-dge"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Qqe-w6-ahO"/>
-                                <include reference="TCR-cf-Hgs"/>
-                                <include reference="XPL-16-k9n"/>
-                                <include reference="rTT-ku-Uty"/>
+                                <exclude reference="BXj-ZG-w5p"/>
+                                <include reference="BpE-9P-wIo"/>
+                                <include reference="XCR-NU-4Xp"/>
+                                <include reference="cqV-vT-Pfu"/>
+                                <exclude reference="dTc-Za-frz"/>
                                 <include reference="0Br-dX-wUs"/>
                                 <include reference="Xgr-re-LYX"/>
                                 <include reference="aow-re-iet"/>
                                 <include reference="lo0-7i-y63"/>
+                                <include reference="Qqe-w6-ahO"/>
+                                <include reference="TCR-cf-Hgs"/>
+                                <include reference="XPL-16-k9n"/>
+                                <include reference="rTT-ku-Uty"/>
+                                <include reference="e2r-oC-7KV"/>
                             </mask>
                         </variation>
                     </view>
