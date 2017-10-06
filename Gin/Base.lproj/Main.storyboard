@@ -130,7 +130,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.69803921568627447" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCy-Rl-dge">
+                            <view hidden="YES" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCy-Rl-dge">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e7-TC-KbG">
@@ -645,6 +645,7 @@
                     </view>
                     <connections>
                         <outlet property="calcDisplay" destination="ABR-an-MeE" id="ciZ-9v-1D8"/>
+                        <outlet property="calcOverlay" destination="mCy-Rl-dge" id="Qp2-Te-hme"/>
                         <outlet property="p1First" destination="IH8-Z4-kb5" id="woa-SQ-yBV"/>
                         <outlet property="p1Second" destination="Yvs-VE-9YD" id="ZKc-2N-c4C"/>
                         <outlet property="p1Third" destination="7Xf-8g-5Rl" id="JhD-ty-MjF"/>

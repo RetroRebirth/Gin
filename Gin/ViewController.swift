@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var p1Second: UILabel!
     @IBOutlet weak var p1Third: UILabel!
     
+    @IBOutlet weak var calcOverlay: UIView!
     @IBOutlet weak var calcDisplay: UILabel!
     
     override func viewDidLoad() {
@@ -27,11 +28,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func p1AddTapped(sender: AnyObject) {
-        p1First.text =  String(Int(p1First.text!)! + 1)
+        calcDisplay.text = "000"
+        calcOverlay.hidden = false
     }
 
     @IBAction func p1UndoTapped(sender: AnyObject) {
-        p1Second.text =  String(Int(p1Second.text!)! + 1)
+        p1First.text = String(Int(p1First.text!)! - Int(calcDisplay.text!)!)
     }
     
     @IBAction func calc1Tapped(sender: AnyObject) { calcNumTapped(1) }
@@ -50,7 +52,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calcSubmitTapped(sender: AnyObject) {
-        calcDisplay.text = "000"
+        calcOverlay.hidden = true
+        
+        p1First.text = String(Int(p1First.text!)! + Int(calcDisplay.text!)!)
     }
 }
 
