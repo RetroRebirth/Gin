@@ -44,14 +44,14 @@
                                 <exclude reference="goD-yJ-Urv"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0Br-dX-wUs"/>
-                                <exclude reference="Xgr-re-LYX"/>
-                                <exclude reference="aow-re-iet"/>
-                                <exclude reference="lo0-7i-y63"/>
                                 <exclude reference="Qqe-w6-ahO"/>
                                 <exclude reference="TCR-cf-Hgs"/>
                                 <exclude reference="XPL-16-k9n"/>
                                 <exclude reference="rTT-ku-Uty"/>
+                                <exclude reference="0Br-dX-wUs"/>
+                                <exclude reference="Xgr-re-LYX"/>
+                                <exclude reference="aow-re-iet"/>
+                                <exclude reference="lo0-7i-y63"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -60,14 +60,14 @@
                                 <include reference="goD-yJ-Urv"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0Br-dX-wUs"/>
-                                <include reference="Xgr-re-LYX"/>
-                                <include reference="aow-re-iet"/>
-                                <include reference="lo0-7i-y63"/>
                                 <include reference="Qqe-w6-ahO"/>
                                 <include reference="TCR-cf-Hgs"/>
                                 <include reference="XPL-16-k9n"/>
                                 <include reference="rTT-ku-Uty"/>
+                                <include reference="0Br-dX-wUs"/>
+                                <include reference="Xgr-re-LYX"/>
+                                <include reference="aow-re-iet"/>
+                                <include reference="lo0-7i-y63"/>
                             </mask>
                         </variation>
                     </view>
