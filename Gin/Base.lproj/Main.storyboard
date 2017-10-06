@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goD-yJ-Urv">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.69803921568627447" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="136" width="600" height="128"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dca-NV-9Sf">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.078431372549019607" green="0.52156862745098043" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="536" width="600" height="128"/>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="goD-yJ-Urv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="0Br-dX-wUs"/>
+                            <constraint firstItem="dca-NV-9Sf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Qqe-w6-ahO"/>
+                            <constraint firstItem="dca-NV-9Sf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TCR-cf-Hgs"/>
+                            <constraint firstItem="dca-NV-9Sf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="XPL-16-k9n"/>
+                            <constraint firstItem="goD-yJ-Urv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Xgr-re-LYX"/>
+                            <constraint firstItem="goD-yJ-Urv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lo0-7i-y63"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="goD-yJ-Urv"/>
+                                <exclude reference="dca-NV-9Sf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0Br-dX-wUs"/>
+                                <exclude reference="Xgr-re-LYX"/>
+                                <exclude reference="lo0-7i-y63"/>
+                                <exclude reference="Qqe-w6-ahO"/>
+                                <exclude reference="TCR-cf-Hgs"/>
+                                <exclude reference="XPL-16-k9n"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="goD-yJ-Urv"/>
+                                <include reference="dca-NV-9Sf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0Br-dX-wUs"/>
+                                <include reference="Xgr-re-LYX"/>
+                                <include reference="lo0-7i-y63"/>
+                                <include reference="Qqe-w6-ahO"/>
+                                <include reference="TCR-cf-Hgs"/>
+                                <include reference="XPL-16-k9n"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
