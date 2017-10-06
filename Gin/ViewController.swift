@@ -93,9 +93,12 @@ class ViewController: UIViewController {
     
     // p1/p2 Button Actions
     func addTapped(p1: Bool) {
+        if p1 != p1Calc {
+            calcOverlay.rotate(angle: 180)
+        }
+        
         p1Calc = p1
         calcDisplay.text = String(format: numFormat, 000)
-        
         calcOverlay.hidden = false
     }
     func undoTapped(p1: Bool) {
