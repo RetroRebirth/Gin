@@ -63,6 +63,9 @@
                                                 <include reference="xpp-eq-7RO"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="p2UndoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NoR-CX-U7l"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpY-p2-hbV">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -89,6 +92,9 @@
                                                 <include reference="fpe-E6-kNn"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="p2ClearTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uwu-xT-NU9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bN5-UT-9Qh">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -113,6 +119,9 @@
                                                 <include reference="zPC-RP-C57"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="p2AddTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rjm-GP-IyB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.69803921568627447" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
@@ -869,6 +878,10 @@
                         <outlet property="p1Second" destination="Yvs-VE-9YD" id="ZKc-2N-c4C"/>
                         <outlet property="p1Third" destination="7Xf-8g-5Rl" id="JhD-ty-MjF"/>
                         <outlet property="p1UndoButton" destination="Rtv-re-0xh" id="s4q-Sw-RB6"/>
+                        <outlet property="p2First" destination="fdo-YT-hPt" id="ulp-3t-aYe"/>
+                        <outlet property="p2Second" destination="yvt-mt-Hb2" id="jeX-yV-c0q"/>
+                        <outlet property="p2Third" destination="joU-Bt-uC4" id="zci-9Z-hNX"/>
+                        <outlet property="p2UndoButton" destination="JOx-ya-va7" id="h5t-iO-Kc4"/>
                         <outlet property="p2View" destination="Prh-9A-aVO" id="aZf-Ye-A0U"/>
                     </connections>
                 </viewController>

@@ -39,25 +39,35 @@ class ViewController: UIViewController {
         }
     }
 
+    // UI Elements
     @IBOutlet weak var p1First: UILabel!
     @IBOutlet weak var p1Second: UILabel!
     @IBOutlet weak var p1Third: UILabel!
     @IBOutlet weak var p1UndoButton: UIButton!
     
     @IBOutlet weak var p2View: UIView!
+    @IBOutlet weak var p2First: UILabel!
+    @IBOutlet weak var p2Second: UILabel!
+    @IBOutlet weak var p2Third: UILabel!
+    @IBOutlet weak var p2UndoButton: UIButton!
     
     @IBOutlet weak var calcOverlay: UIView!
     @IBOutlet weak var calcDisplay: UILabel!
     
+    // Variables
     let numFormat: String = "%03d"
     
-    var undos: IntStack = IntStack()
+    var p1Calc: Bool = true
     
+    var p1Undos: IntStack = IntStack()
+    
+    var p2Undos: IntStack = IntStack()
+    
+    // Control Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         p2View.rotate(angle: 180)
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,34 +76,44 @@ class ViewController: UIViewController {
     }
     
     // p1 Button Actions
-
-    @IBAction func p1AddTapped(sender: AnyObject) {
-        calcDisplay.text = String(format: numFormat, 000)
-        calcOverlay.hidden = false
-    }
-
-    @IBAction func p1UndoTapped(sender: AnyObject) {
-        let num = undos.pop()
-        p1First.text = String(format: numFormat, Int(p1First.text!)! - num)
-        
-        if undos.isEmpty() {
-            p1UndoButton.enabled = false
-        }
-    }
-    
-    @IBAction func p1ClearTapped(sender: AnyObject) {
-        p1First.text = String(format: numFormat, 000)
-        undos.clear()
-        
-        p1UndoButton.enabled = false
-    }
+    @IBAction func p1AddTapped(sender: AnyObject) { addTapped(true) }
+    @IBAction func p1UndoTapped(sender: AnyObject) { undoTapped(true) }
+    @IBAction func p1ClearTapped(sender: AnyObject) { clearTapped(true) }
     
     // p2 Button Actions
+    @IBAction func p2AddTapped(sender: AnyObject) { addTapped(false) }
+    @IBAction func p2UndoTapped(sender: AnyObject) { undoTapped(false) }
+    @IBAction func p2ClearTapped(sender: AnyObject) { clearTapped(false) }
     
     // p1/p2 Button Actions
+    func addTapped(p1: Bool) {
+        p1Calc = p1
+        calcDisplay.text = String(format: numFormat, 000)
+        
+        calcOverlay.hidden = false
+    }
+    func undoTapped(p1: Bool) {
+        var undos = p1 ? p1Undos : p2Undos
+        let undoButton = p1 ? p1UndoButton : p2UndoButton
+        let first = p1 ? p1First : p2First
+        
+        let num = undos.pop()
+        first.text = String(format: numFormat, Int(first.text!)! - num)
+        if undos.isEmpty() {
+            undoButton.enabled = false
+        }
+    }
+    func clearTapped(p1: Bool) {
+        var undos = p1 ? p1Undos : p2Undos
+        let undoButton = p1 ? p1UndoButton : p2UndoButton
+        let first = p1 ? p1First : p2First
+        
+        first.text = String(format: numFormat, 000)
+        undos.clear()
+        undoButton.enabled = false
+    }
     
     // Calculator Actions
-    
     @IBAction func calc1Tapped(sender: AnyObject) { calcNumTapped(1) }
     @IBAction func calc2Tapped(sender: AnyObject) { calcNumTapped(2) }
     @IBAction func calc3Tapped(sender: AnyObject) { calcNumTapped(3) }
@@ -107,16 +127,18 @@ class ViewController: UIViewController {
     func calcNumTapped(num: Int) {
         calcDisplay.text = String(format: numFormat, (Int(calcDisplay.text!)!*10 + num) % 1000)
     }
-    
     @IBAction func calcSubmitTapped(sender: AnyObject) {
+        var undos = p1Calc ? p1Undos : p2Undos
+        let undoButton = p1Calc ? p1UndoButton : p2UndoButton
+        let first = p1Calc ? p1First : p2First
+        
         calcOverlay.hidden = true
         
         let num = Int(calcDisplay.text!)!
-        p1First.text = String(format: numFormat, Int(p1First.text!)! + num)
+        first.text = String(format: numFormat, Int(first.text!)! + num)
         undos.push(num)
-        
-        if !p1UndoButton.enabled {
-            p1UndoButton.enabled = true
+        if !undoButton.enabled {
+            undoButton.enabled = true
         }
     }
 }
