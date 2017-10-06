@@ -8,6 +8,19 @@
 
 import UIKit
 
+extension UIView {
+    /**
+     Rotate a view by specified degrees
+     
+     - parameter angle: angle in degrees
+     */
+    func rotate(angle angle: CGFloat) {
+        let radians = angle / 180.0 * CGFloat(M_PI)
+        let rotation = CGAffineTransformRotate(self.transform, radians);
+        self.transform = rotation
+    }
+}
+
 class ViewController: UIViewController {
     
     struct IntStack {
@@ -29,8 +42,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var p1First: UILabel!
     @IBOutlet weak var p1Second: UILabel!
     @IBOutlet weak var p1Third: UILabel!
+    @IBOutlet weak var p1UndoButton: UIButton!
     
-    @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var p2View: UIView!
     
     @IBOutlet weak var calcOverlay: UIView!
     @IBOutlet weak var calcDisplay: UILabel!
@@ -42,6 +56,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        p2View.rotate(angle: 180)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,7 +75,7 @@ class ViewController: UIViewController {
         p1First.text = String(format: numFormat, Int(p1First.text!)! - num)
         
         if undos.isEmpty() {
-            undoButton.enabled = false
+            p1UndoButton.enabled = false
         }
     }
     
@@ -67,7 +83,7 @@ class ViewController: UIViewController {
         p1First.text = String(format: numFormat, 000)
         undos.clear()
         
-        undoButton.enabled = false
+        p1UndoButton.enabled = false
     }
     
     @IBAction func calc1Tapped(sender: AnyObject) { calcNumTapped(1) }
@@ -91,8 +107,8 @@ class ViewController: UIViewController {
         p1First.text = String(format: numFormat, Int(p1First.text!)! + num)
         undos.push(num)
         
-        if !undoButton.enabled {
-            undoButton.enabled = true
+        if !p1UndoButton.enabled {
+            p1UndoButton.enabled = true
         }
     }
 }

@@ -868,7 +868,8 @@
                         <outlet property="p1First" destination="IH8-Z4-kb5" id="woa-SQ-yBV"/>
                         <outlet property="p1Second" destination="Yvs-VE-9YD" id="ZKc-2N-c4C"/>
                         <outlet property="p1Third" destination="7Xf-8g-5Rl" id="JhD-ty-MjF"/>
-                        <outlet property="undoButton" destination="Rtv-re-0xh" id="MFt-VH-zTD"/>
+                        <outlet property="p1UndoButton" destination="Rtv-re-0xh" id="s4q-Sw-RB6"/>
+                        <outlet property="p2View" destination="Prh-9A-aVO" id="aZf-Ye-A0U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
