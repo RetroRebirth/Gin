@@ -57,12 +57,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var calcDisplay: UILabel!
     
     // Variables
-    let numFormat: String = "%03d"
+    let numFormat: String = "%03d" // TODO caps lock
+    let STAGE_WIN: Int = 150
+    let NUM_STAGES: Int = 3
     
     var p1Calc: Bool = true
     
     var p1Undos: IntStack = IntStack()
+    var p1Stage: Int = 0
     var p2Undos: IntStack = IntStack()
+    var p2Stage: Int = 0
     
     // Control Functions
     override func viewDidLoad() {
@@ -122,12 +126,18 @@ class ViewController: UIViewController {
         let undoButton = p1 ? p1UndoButton : p2UndoButton
         let clearButton = p1 ? p1ClearButton : p2ClearButton
         let first = p1 ? p1First : p2First
+        let second = p1 ? p1Second : p2Second
+        let third = p1 ? p1Third : p2Third
         
         first.text = String(format: numFormat, 000)
+        second.text = String(format: numFormat, 000)
+        third.text = String(format: numFormat, 000)
         if p1 {
             p1Undos.clear()
+            p1Stage = 0
         } else  {
             p2Undos.clear()
+            p2Stage = 0
         }
         undoButton.enabled = false
         clearButton.enabled = false
@@ -150,12 +160,40 @@ class ViewController: UIViewController {
     @IBAction func calcSubmitTapped(sender: AnyObject) {
         let undoButton = p1Calc ? p1UndoButton : p2UndoButton
         let clearButton = p1Calc ? p1ClearButton : p2ClearButton
-        let first = p1Calc ? p1First : p2First
+
+        var text: UILabel? = nil
+        if p1Calc {
+            switch p1Stage {
+            case 0:
+                text = p1First
+            case 1:
+                text = p1Second
+            case 2:
+                text = p1Third
+            default:
+                print("Unexpected value: \(p1Stage)")
+            }
+        } else {
+            switch p2Stage {
+            case 0:
+                text = p2First
+            case 1:
+                text = p2Second
+            case 2:
+                text = p2Third
+            default:
+                print("Unexpected value: \(p2Stage)")
+            }
+        }
+        guard text != nil else {
+            return
+        }
         
         calcOverlay.hidden = true
         
         let num = Int(calcDisplay.text!)!
-        first.text = String(format: numFormat, Int(first.text!)! + num)
+        let sum = Int(text!.text!)! + num
+        text!.text = String(format: numFormat, sum)
         if p1Calc {
             p1Undos.push(num)
         } else  {
@@ -166,6 +204,25 @@ class ViewController: UIViewController {
         }
         if !clearButton.enabled {
             clearButton.enabled = true
+        }
+        
+        // Check winning condition
+        if sum >= STAGE_WIN {
+            if p1Calc {
+                p1Stage += 1
+                if p1Stage >= NUM_STAGES {
+                    print("P1 WINS!")
+                    clearTapped(true)
+                    clearTapped(false)
+                }
+            } else {
+                p2Stage += 1
+                if p2Stage >= NUM_STAGES {
+                    print("P2 WINS!")
+                    clearTapped(true)
+                    clearTapped(false)
+                }
+            }
         }
     }
 }
