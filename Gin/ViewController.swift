@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var calcOverlay: UIView!
     @IBOutlet weak var calcDisplay: UILabel!
     
+    let numFormat: String = "%03d"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,12 +30,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func p1AddTapped(sender: AnyObject) {
-        calcDisplay.text = "000"
+        calcDisplay.text = String(format: numFormat, 0)
         calcOverlay.hidden = false
     }
 
     @IBAction func p1UndoTapped(sender: AnyObject) {
-        p1First.text = String(Int(p1First.text!)! - Int(calcDisplay.text!)!)
+        p1First.text = String(format: numFormat, Int(p1First.text!)! - Int(calcDisplay.text!)!)
     }
     
     @IBAction func calc1Tapped(sender: AnyObject) { calcNumTapped(1) }
@@ -48,13 +50,12 @@ class ViewController: UIViewController {
     @IBAction func calc0Tapped(sender: AnyObject) { calcNumTapped(0) }
 
     func calcNumTapped(num: Int) {
-        calcDisplay.text = String(Int(calcDisplay.text!)!*10 + num)
+        calcDisplay.text = String(format: numFormat, Int(calcDisplay.text!)!*10 + num)
     }
     
     @IBAction func calcSubmitTapped(sender: AnyObject) {
         calcOverlay.hidden = true
-        
-        p1First.text = String(Int(p1First.text!)! + Int(calcDisplay.text!)!)
+        p1First.text = String(format: numFormat, Int(p1First.text!)! + Int(calcDisplay.text!)!)
     }
 }
 
