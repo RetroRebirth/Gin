@@ -49,6 +49,9 @@
                                         <variation key="heightClass=regular" misplaced="YES">
                                             <rect key="frame" x="472" y="272" width="64" height="64"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="p1AddTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ASX-Zs-Cgk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtv-re-0xh">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -60,6 +63,9 @@
                                         <variation key="heightClass=regular" misplaced="YES">
                                             <rect key="frame" x="64" y="272" width="64" height="64"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="p1UndoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IOT-3u-afu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.078431372549019607" green="0.52156862745098043" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -167,6 +173,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="p1First" destination="IH8-Z4-kb5" id="woa-SQ-yBV"/>
+                        <outlet property="p1Second" destination="Yvs-VE-9YD" id="ZKc-2N-c4C"/>
+                        <outlet property="p1Third" destination="7Xf-8g-5Rl" id="JhD-ty-MjF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
