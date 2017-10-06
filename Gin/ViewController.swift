@@ -64,6 +64,8 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // p1 Button Actions
 
     @IBAction func p1AddTapped(sender: AnyObject) {
         calcDisplay.text = String(format: numFormat, 000)
@@ -86,6 +88,12 @@ class ViewController: UIViewController {
         p1UndoButton.enabled = false
     }
     
+    // p2 Button Actions
+    
+    // p1/p2 Button Actions
+    
+    // Calculator Actions
+    
     @IBAction func calc1Tapped(sender: AnyObject) { calcNumTapped(1) }
     @IBAction func calc2Tapped(sender: AnyObject) { calcNumTapped(2) }
     @IBAction func calc3Tapped(sender: AnyObject) { calcNumTapped(3) }
@@ -97,7 +105,7 @@ class ViewController: UIViewController {
     @IBAction func calc9Tapped(sender: AnyObject) { calcNumTapped(9) }
     @IBAction func calc0Tapped(sender: AnyObject) { calcNumTapped(0) }
     func calcNumTapped(num: Int) {
-        calcDisplay.text = String(format: numFormat, Int(calcDisplay.text!)!*10 + num)
+        calcDisplay.text = String(format: numFormat, (Int(calcDisplay.text!)!*10 + num) % 1000)
     }
     
     @IBAction func calcSubmitTapped(sender: AnyObject) {
