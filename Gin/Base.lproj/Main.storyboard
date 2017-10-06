@@ -39,29 +39,61 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNh-QQ-scZ">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="72"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.76470588235294112" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="heightClass=regular" misplaced="YES">
+                                            <rect key="frame" x="472" y="272" width="64" height="64"/>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtv-re-0xh">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="72"/>
+                                        <state key="normal" title="&lt;">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.76470588240000004" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="heightClass=regular" misplaced="YES">
+                                            <rect key="frame" x="64" y="272" width="64" height="64"/>
+                                        </variation>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.078431372549019607" green="0.52156862745098043" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fNh-QQ-scZ" secondAttribute="trailing" constant="64" id="0r1-d6-3lC"/>
+                                    <constraint firstItem="Rtv-re-0xh" firstAttribute="leading" secondItem="dca-NV-9Sf" secondAttribute="leading" constant="64" id="2kH-6Y-EDn"/>
                                     <constraint firstItem="IH8-Z4-kb5" firstAttribute="centerY" secondItem="Yvs-VE-9YD" secondAttribute="centerY" id="9Ps-at-BEM"/>
+                                    <constraint firstAttribute="bottom" secondItem="fNh-QQ-scZ" secondAttribute="bottom" constant="64" id="eTe-z6-em0"/>
                                     <constraint firstItem="Yvs-VE-9YD" firstAttribute="centerX" secondItem="dca-NV-9Sf" secondAttribute="centerX" id="fcH-ve-9kr"/>
                                     <constraint firstItem="7Xf-8g-5Rl" firstAttribute="leading" secondItem="Yvs-VE-9YD" secondAttribute="trailing" constant="20" id="hVF-DA-6fD"/>
                                     <constraint firstItem="Yvs-VE-9YD" firstAttribute="leading" secondItem="IH8-Z4-kb5" secondAttribute="trailing" constant="20" id="hfn-63-V2a"/>
                                     <constraint firstItem="7Xf-8g-5Rl" firstAttribute="centerY" secondItem="Yvs-VE-9YD" secondAttribute="centerY" id="mkO-V7-sPI"/>
                                     <constraint firstItem="Yvs-VE-9YD" firstAttribute="top" secondItem="dca-NV-9Sf" secondAttribute="top" constant="20" id="n1n-OC-2N9"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rtv-re-0xh" secondAttribute="bottom" constant="64" id="uVB-SQ-Jfd"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="Yvs-VE-9YD"/>
                                         <exclude reference="7Xf-8g-5Rl"/>
                                         <exclude reference="IH8-Z4-kb5"/>
+                                        <exclude reference="fNh-QQ-scZ"/>
+                                        <exclude reference="Rtv-re-0xh"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="9Ps-at-BEM"/>
                                         <exclude reference="fcH-ve-9kr"/>
                                         <exclude reference="hfn-63-V2a"/>
                                         <exclude reference="n1n-OC-2N9"/>
+                                        <exclude reference="2kH-6Y-EDn"/>
+                                        <exclude reference="uVB-SQ-Jfd"/>
                                         <exclude reference="hVF-DA-6fD"/>
                                         <exclude reference="mkO-V7-sPI"/>
+                                        <exclude reference="0r1-d6-3lC"/>
+                                        <exclude reference="eTe-z6-em0"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
@@ -69,14 +101,20 @@
                                         <include reference="Yvs-VE-9YD"/>
                                         <include reference="7Xf-8g-5Rl"/>
                                         <include reference="IH8-Z4-kb5"/>
+                                        <include reference="fNh-QQ-scZ"/>
+                                        <include reference="Rtv-re-0xh"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="9Ps-at-BEM"/>
                                         <include reference="fcH-ve-9kr"/>
                                         <include reference="hfn-63-V2a"/>
                                         <include reference="n1n-OC-2N9"/>
+                                        <include reference="2kH-6Y-EDn"/>
+                                        <include reference="uVB-SQ-Jfd"/>
                                         <include reference="hVF-DA-6fD"/>
                                         <include reference="mkO-V7-sPI"/>
+                                        <include reference="0r1-d6-3lC"/>
+                                        <include reference="eTe-z6-em0"/>
                                     </mask>
                                 </variation>
                             </view>
