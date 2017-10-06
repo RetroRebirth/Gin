@@ -20,7 +20,65 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dca-NV-9Sf">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvs-VE-9YD">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xf-8g-5Rl">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IH8-Z4-kb5">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.078431372549019607" green="0.52156862745098043" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="IH8-Z4-kb5" firstAttribute="centerY" secondItem="Yvs-VE-9YD" secondAttribute="centerY" id="9Ps-at-BEM"/>
+                                    <constraint firstItem="Yvs-VE-9YD" firstAttribute="centerX" secondItem="dca-NV-9Sf" secondAttribute="centerX" id="fcH-ve-9kr"/>
+                                    <constraint firstItem="7Xf-8g-5Rl" firstAttribute="leading" secondItem="Yvs-VE-9YD" secondAttribute="trailing" constant="20" id="hVF-DA-6fD"/>
+                                    <constraint firstItem="Yvs-VE-9YD" firstAttribute="leading" secondItem="IH8-Z4-kb5" secondAttribute="trailing" constant="20" id="hfn-63-V2a"/>
+                                    <constraint firstItem="7Xf-8g-5Rl" firstAttribute="centerY" secondItem="Yvs-VE-9YD" secondAttribute="centerY" id="mkO-V7-sPI"/>
+                                    <constraint firstItem="Yvs-VE-9YD" firstAttribute="top" secondItem="dca-NV-9Sf" secondAttribute="top" constant="20" id="n1n-OC-2N9"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Yvs-VE-9YD"/>
+                                        <exclude reference="7Xf-8g-5Rl"/>
+                                        <exclude reference="IH8-Z4-kb5"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="9Ps-at-BEM"/>
+                                        <exclude reference="fcH-ve-9kr"/>
+                                        <exclude reference="hfn-63-V2a"/>
+                                        <exclude reference="n1n-OC-2N9"/>
+                                        <exclude reference="hVF-DA-6fD"/>
+                                        <exclude reference="mkO-V7-sPI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="Yvs-VE-9YD"/>
+                                        <include reference="7Xf-8g-5Rl"/>
+                                        <include reference="IH8-Z4-kb5"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="9Ps-at-BEM"/>
+                                        <include reference="fcH-ve-9kr"/>
+                                        <include reference="hfn-63-V2a"/>
+                                        <include reference="n1n-OC-2N9"/>
+                                        <include reference="hVF-DA-6fD"/>
+                                        <include reference="mkO-V7-sPI"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goD-yJ-Urv">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -74,6 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="577" y="357.75"/>
         </scene>
     </scenes>
 </document>
