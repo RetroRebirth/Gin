@@ -132,18 +132,120 @@
                             </view>
                             <view opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCy-Rl-dge">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e7-TC-KbG">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="gVf-ED-IKh"/>
+                                            <constraint firstAttribute="width" constant="64" id="mbL-kK-afJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="gVf-ED-IKh"/>
+                                                <exclude reference="mbL-kK-afJ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="gVf-ED-IKh"/>
+                                                <include reference="mbL-kK-afJ"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5X-at-iNV">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="GgG-Vx-HQN"/>
+                                            <constraint firstAttribute="height" constant="64" id="NBc-fE-gwr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="GgG-Vx-HQN"/>
+                                                <exclude reference="NBc-fE-gwr"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="GgG-Vx-HQN"/>
+                                                <include reference="NBc-fE-gwr"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjL-Bs-BIg">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="8r3-iy-hu8"/>
+                                            <constraint firstAttribute="width" constant="64" id="Y2b-4C-Wmc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="8r3-iy-hu8"/>
+                                                <exclude reference="Y2b-4C-Wmc"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="8r3-iy-hu8"/>
+                                                <include reference="Y2b-4C-Wmc"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mCy-Rl-dge" secondAttribute="height" multiplier="3:4" id="7K4-8R-dhn"/>
+                                    <constraint firstItem="AjL-Bs-BIg" firstAttribute="centerY" secondItem="5e7-TC-KbG" secondAttribute="centerY" id="NAu-L6-cZO"/>
+                                    <constraint firstItem="5e7-TC-KbG" firstAttribute="centerY" secondItem="mCy-Rl-dge" secondAttribute="centerY" id="c2i-wR-Iet"/>
+                                    <constraint firstItem="e5X-at-iNV" firstAttribute="leading" secondItem="5e7-TC-KbG" secondAttribute="trailing" constant="20" id="dwB-ky-RQI"/>
+                                    <constraint firstItem="5e7-TC-KbG" firstAttribute="leading" secondItem="AjL-Bs-BIg" secondAttribute="trailing" constant="20" id="i5Y-41-i4Z"/>
+                                    <constraint firstItem="5e7-TC-KbG" firstAttribute="centerX" secondItem="mCy-Rl-dge" secondAttribute="centerX" id="k38-Jd-cVZ"/>
+                                    <constraint firstItem="e5X-at-iNV" firstAttribute="centerY" secondItem="5e7-TC-KbG" secondAttribute="centerY" id="npE-t0-Cce"/>
                                 </constraints>
                                 <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="5e7-TC-KbG"/>
+                                        <exclude reference="e5X-at-iNV"/>
+                                        <exclude reference="AjL-Bs-BIg"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <exclude reference="7K4-8R-dhn"/>
+                                        <exclude reference="NAu-L6-cZO"/>
+                                        <exclude reference="c2i-wR-Iet"/>
+                                        <exclude reference="i5Y-41-i4Z"/>
+                                        <exclude reference="k38-Jd-cVZ"/>
+                                        <exclude reference="dwB-ky-RQI"/>
+                                        <exclude reference="npE-t0-Cce"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="5e7-TC-KbG"/>
+                                        <include reference="e5X-at-iNV"/>
+                                        <include reference="AjL-Bs-BIg"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <include reference="7K4-8R-dhn"/>
+                                        <include reference="NAu-L6-cZO"/>
+                                        <include reference="c2i-wR-Iet"/>
+                                        <include reference="i5Y-41-i4Z"/>
+                                        <include reference="k38-Jd-cVZ"/>
+                                        <include reference="dwB-ky-RQI"/>
+                                        <include reference="npE-t0-Cce"/>
                                     </mask>
                                 </variation>
                             </view>
