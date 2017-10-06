@@ -67,7 +67,34 @@
                                             <action selector="p2UndoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NoR-CX-U7l"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpY-p2-hbV">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bN5-UT-9Qh">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="jyg-4U-bJp"/>
+                                            <constraint firstAttribute="width" constant="64" id="zPC-RP-C57"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="jyg-4U-bJp"/>
+                                                <exclude reference="zPC-RP-C57"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="jyg-4U-bJp"/>
+                                                <include reference="zPC-RP-C57"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="p2AddTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rjm-GP-IyB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpY-p2-hbV">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -96,33 +123,6 @@
                                             <action selector="p2ClearTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uwu-xT-NU9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bN5-UT-9Qh">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <color key="backgroundColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="jyg-4U-bJp"/>
-                                            <constraint firstAttribute="width" constant="64" id="zPC-RP-C57"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <state key="normal" title="+">
-                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </state>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="jyg-4U-bJp"/>
-                                                <exclude reference="zPC-RP-C57"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular">
-                                            <mask key="constraints">
-                                                <include reference="jyg-4U-bJp"/>
-                                                <include reference="zPC-RP-C57"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <action selector="p2AddTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rjm-GP-IyB"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.69803921568627447" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -145,8 +145,8 @@
                                         <exclude reference="joU-Bt-uC4"/>
                                         <exclude reference="fdo-YT-hPt"/>
                                         <exclude reference="JOx-ya-va7"/>
-                                        <exclude reference="xpY-p2-hbV"/>
                                         <exclude reference="bN5-UT-9Qh"/>
+                                        <exclude reference="xpY-p2-hbV"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="FNK-rn-eam"/>
@@ -170,8 +170,8 @@
                                         <include reference="joU-Bt-uC4"/>
                                         <include reference="fdo-YT-hPt"/>
                                         <include reference="JOx-ya-va7"/>
-                                        <include reference="xpY-p2-hbV"/>
                                         <include reference="bN5-UT-9Qh"/>
+                                        <include reference="xpY-p2-hbV"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="FNK-rn-eam"/>
@@ -264,7 +264,7 @@
                                             <action selector="p1AddTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ASX-Zs-Cgk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8P-mA-rdq">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8P-mA-rdq">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -874,10 +874,12 @@
                     <connections>
                         <outlet property="calcDisplay" destination="ABR-an-MeE" id="ciZ-9v-1D8"/>
                         <outlet property="calcOverlay" destination="mCy-Rl-dge" id="Qp2-Te-hme"/>
+                        <outlet property="p1ClearButton" destination="y8P-mA-rdq" id="Swq-in-dWa"/>
                         <outlet property="p1First" destination="IH8-Z4-kb5" id="woa-SQ-yBV"/>
                         <outlet property="p1Second" destination="Yvs-VE-9YD" id="ZKc-2N-c4C"/>
                         <outlet property="p1Third" destination="7Xf-8g-5Rl" id="JhD-ty-MjF"/>
                         <outlet property="p1UndoButton" destination="Rtv-re-0xh" id="s4q-Sw-RB6"/>
+                        <outlet property="p2ClearButton" destination="xpY-p2-hbV" id="2fb-Gp-lan"/>
                         <outlet property="p2First" destination="fdo-YT-hPt" id="ulp-3t-aYe"/>
                         <outlet property="p2Second" destination="yvt-mt-Hb2" id="jeX-yV-c0q"/>
                         <outlet property="p2Third" destination="joU-Bt-uC4" id="zci-9Z-hNX"/>

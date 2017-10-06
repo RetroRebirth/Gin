@@ -44,12 +44,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var p1Second: UILabel!
     @IBOutlet weak var p1Third: UILabel!
     @IBOutlet weak var p1UndoButton: UIButton!
+    @IBOutlet weak var p1ClearButton: UIButton!
     
     @IBOutlet weak var p2View: UIView!
     @IBOutlet weak var p2First: UILabel!
     @IBOutlet weak var p2Second: UILabel!
     @IBOutlet weak var p2Third: UILabel!
     @IBOutlet weak var p2UndoButton: UIButton!
+    @IBOutlet weak var p2ClearButton: UIButton!
     
     @IBOutlet weak var calcOverlay: UIView!
     @IBOutlet weak var calcDisplay: UILabel!
@@ -93,6 +95,7 @@ class ViewController: UIViewController {
     }
     func undoTapped(p1: Bool) {
         let undoButton = p1 ? p1UndoButton : p2UndoButton
+        let clearButton = p1 ? p1ClearButton : p2ClearButton
         let first = p1 ? p1First : p2First
         
         var num = 0
@@ -104,10 +107,12 @@ class ViewController: UIViewController {
         first.text = String(format: numFormat, Int(first.text!)! - num)
         if (p1 ? p1Undos : p2Undos).isEmpty() {
             undoButton.enabled = false
+            clearButton.enabled = false
         }
     }
     func clearTapped(p1: Bool) {
         let undoButton = p1 ? p1UndoButton : p2UndoButton
+        let clearButton = p1 ? p1ClearButton : p2ClearButton
         let first = p1 ? p1First : p2First
         
         first.text = String(format: numFormat, 000)
@@ -117,6 +122,7 @@ class ViewController: UIViewController {
             p2Undos.clear()
         }
         undoButton.enabled = false
+        clearButton.enabled = false
     }
     
     // Calculator Actions
@@ -135,6 +141,7 @@ class ViewController: UIViewController {
     }
     @IBAction func calcSubmitTapped(sender: AnyObject) {
         let undoButton = p1Calc ? p1UndoButton : p2UndoButton
+        let clearButton = p1Calc ? p1ClearButton : p2ClearButton
         let first = p1Calc ? p1First : p2First
         
         calcOverlay.hidden = true
@@ -148,6 +155,9 @@ class ViewController: UIViewController {
         }
         if !undoButton.enabled {
             undoButton.enabled = true
+        }
+        if !clearButton.enabled {
+            clearButton.enabled = true
         }
     }
 }
