@@ -109,7 +109,18 @@ class ViewController: UIViewController {
     func undoTapped(_ p1: Bool) {
         let undoButton = p1 ? p1UndoButton : p2UndoButton
         let clearButton = p1 ? p1ClearButton : p2ClearButton
-        let first = p1 ? p1First : p2First
+        
+        var text: UILabel? = getCurLabel(p1)
+        let curNum = Int(text!.text!)!
+        
+        if curNum <= 0 {
+            if p1 {
+                p1Stage = p1Stage - 1
+            } else {
+                p2Stage = p2Stage - 1
+            }
+            text = getCurLabel(p1)
+        }
         
         var num = 0
         if p1 {
@@ -117,7 +128,7 @@ class ViewController: UIViewController {
         } else  {
             num = p2Undos.pop()
         }
-        first?.text = String(format: numFormat, Int(first!.text!)! - num)
+        text!.text = String(format: numFormat, Int(text!.text!)! - num)
         if (p1 ? p1Undos : p2Undos).isEmpty() {
             undoButton?.isEnabled = false
             clearButton?.isEnabled = false
@@ -162,33 +173,7 @@ class ViewController: UIViewController {
         let undoButton = p1Calc ? p1UndoButton : p2UndoButton
         let clearButton = p1Calc ? p1ClearButton : p2ClearButton
 
-        var text: UILabel? = nil
-        if p1Calc {
-            switch p1Stage {
-            case 0:
-                text = p1First
-            case 1:
-                text = p1Second
-            case 2:
-                text = p1Third
-            default:
-                print("Unexpected value: \(p1Stage)")
-            }
-        } else {
-            switch p2Stage {
-            case 0:
-                text = p2First
-            case 1:
-                text = p2Second
-            case 2:
-                text = p2Third
-            default:
-                print("Unexpected value: \(p2Stage)")
-            }
-        }
-        guard text != nil else {
-            return
-        }
+        var text: UILabel? = getCurLabel(p1Calc)
         
         calcOverlay.isHidden = true
         
@@ -213,18 +198,50 @@ class ViewController: UIViewController {
                 p1Stage += 1
                 if p1Stage >= NUM_STAGES {
                     print("P1 WINS!")
-                    clearTapped(true)
-                    clearTapped(false)
+                    // TODO display win message
+//                    clearTapped(true)
+//                    clearTapped(false)
                 }
             } else {
                 p2Stage += 1
                 if p2Stage >= NUM_STAGES {
                     print("P2 WINS!")
-                    clearTapped(true)
-                    clearTapped(false)
+                    // TODO display win message
+//                    clearTapped(true)
+//                    clearTapped(false)
                 }
             }
         }
+    }
+    
+    func getCurLabel(_ p1: Bool) -> UILabel {
+        if p1 {
+            switch p1Stage {
+            case 0:
+                return p1First
+            case 1:
+                return p1Second
+            case 2:
+                return p1Third
+            default:
+                print("Unexpected value: \(p1Stage)")
+                return p1Third
+            }
+        } else {
+            switch p2Stage {
+            case 0:
+                return p2First
+            case 1:
+                return p2Second
+            case 2:
+                return p2Third
+            default:
+                print("Unexpected value: \(p2Stage)")
+                return p2Third
+            }
+        }
+        
+        return p1First
     }
 }
 
