@@ -86,14 +86,15 @@ class ViewController: UIViewController {
     }
     
     // p1 Button Actions
-    @IBAction func p1AddTapped(sender: AnyObject) { addTapped(true) }
-    @IBAction func p1UndoTapped(sender: AnyObject) { undoTapped(true) }
-    @IBAction func p1ClearTapped(sender: AnyObject) { clearTapped(true) }
+
+    @IBAction func p1AddTapped(_ sender: Any) { addTapped(true) }
+    @IBAction func p1UndoTapped(_ sender: Any) { undoTapped(true) }
+    @IBAction func p1ClearTapped(_ sender: Any) { clearTapped(true) }
     
     // p2 Button Actions
-    @IBAction func p2AddTapped(sender: AnyObject) { addTapped(false) }
-    @IBAction func p2UndoTapped(sender: AnyObject) { undoTapped(false) }
-    @IBAction func p2ClearTapped(sender: AnyObject) { clearTapped(false) }
+    @IBAction func p2AddTapped(_ sender: Any) { addTapped(false) }
+    @IBAction func p2UndoTapped(_ sender: Any) { undoTapped(false) }
+    @IBAction func p2ClearTapped(_ sender: Any) { clearTapped(false) }
     
     // p1/p2 Button Actions
     func addTapped(_ p1: Bool) {
@@ -144,20 +145,20 @@ class ViewController: UIViewController {
     }
     
     // Calculator Actions
-    @IBAction func calc1Tapped(sender: AnyObject) { calcNumTapped(1) }
-    @IBAction func calc2Tapped(sender: AnyObject) { calcNumTapped(2) }
-    @IBAction func calc3Tapped(sender: AnyObject) { calcNumTapped(3) }
-    @IBAction func calc4Tapped(sender: AnyObject) { calcNumTapped(4) }
-    @IBAction func calc5Tapped(sender: AnyObject) { calcNumTapped(5) }
-    @IBAction func calc6Tapped(sender: AnyObject) { calcNumTapped(6) }
-    @IBAction func calc7Tapped(sender: AnyObject) { calcNumTapped(7) }
-    @IBAction func calc8Tapped(sender: AnyObject) { calcNumTapped(8) }
-    @IBAction func calc9Tapped(sender: AnyObject) { calcNumTapped(9) }
-    @IBAction func calc0Tapped(sender: AnyObject) { calcNumTapped(0) }
+    @IBAction func calc1Tapped(_ sender: Any) { calcNumTapped(1) }
+    @IBAction func calc2Tapped(_ sender: Any) { calcNumTapped(2) }
+    @IBAction func calc3Tapped(_ sender: Any) { calcNumTapped(3) }
+    @IBAction func calc4Tapped(_ sender: Any) { calcNumTapped(4) }
+    @IBAction func calc5Tapped(_ sender: Any) { calcNumTapped(5) }
+    @IBAction func calc6Tapped(_ sender: Any) { calcNumTapped(6) }
+    @IBAction func calc7Tapped(_ sender: Any) { calcNumTapped(7) }
+    @IBAction func calc8Tapped(_ sender: Any) { calcNumTapped(8) }
+    @IBAction func calc9Tapped(_ sender: Any) { calcNumTapped(9) }
+    @IBAction func calc0Tapped(_ sender: Any) { calcNumTapped(0) }
     func calcNumTapped(_ num: Int) {
         calcDisplay.text = String(format: numFormat, (Int(calcDisplay.text!)!*10 + num) % 1000)
     }
-    @IBAction func calcSubmitTapped(sender: AnyObject) {
+    @IBAction func calcSubmitTapped(_ sender: Any) {
         let undoButton = p1Calc ? p1UndoButton : p2UndoButton
         let clearButton = p1Calc ? p1ClearButton : p2ClearButton
 
