@@ -405,6 +405,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.christopherwilliams.Gin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -416,6 +417,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.christopherwilliams.Gin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -484,6 +486,7 @@
 				4B3838831F874D6B0072EA01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B3838841F874D6B0072EA01 /* Build configuration list for PBXNativeTarget "GinTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +495,7 @@
 				4B3838861F874D6B0072EA01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B3838871F874D6B0072EA01 /* Build configuration list for PBXNativeTarget "GinUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +504,7 @@
 				4B3838891F874D6B0072EA01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

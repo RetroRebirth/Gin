@@ -14,9 +14,9 @@ extension UIView {
      
      - parameter angle: angle in degrees
      */
-    func rotate(angle angle: CGFloat) {
-        let radians = angle / 180.0 * CGFloat(M_PI)
-        let rotation = CGAffineTransformRotate(self.transform, radians);
+    func rotate(_ angle: CGFloat) {
+        let radians = angle / 180.0 * CGFloat(Double.pi)
+        let rotation = self.transform.rotated(by: radians)
         self.transform = rotation
     }
 }
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     struct IntStack {
         var items = [Int]()
-        mutating func push(item: Int) {
+        mutating func push(_ item: Int) {
             items.append(item)
         }
         mutating func pop() -> Int {
@@ -72,12 +72,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        p2View.rotate(angle: 180)
+        p2View.rotate(180)
         
-        p1UndoButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
-        p1ClearButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
-        p2UndoButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
-        p2ClearButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
+        p1UndoButton.setTitleColor(UIColor.gray, for: UIControlState.disabled)
+        p1ClearButton.setTitleColor(UIColor.gray, for: UIControlState.disabled)
+        p2UndoButton.setTitleColor(UIColor.gray, for: UIControlState.disabled)
+        p2ClearButton.setTitleColor(UIColor.gray, for: UIControlState.disabled)
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,16 +96,16 @@ class ViewController: UIViewController {
     @IBAction func p2ClearTapped(sender: AnyObject) { clearTapped(false) }
     
     // p1/p2 Button Actions
-    func addTapped(p1: Bool) {
+    func addTapped(_ p1: Bool) {
         if p1 != p1Calc {
-            calcOverlay.rotate(angle: 180)
+            calcOverlay.rotate(180)
         }
         
         p1Calc = p1
         calcDisplay.text = String(format: numFormat, 000)
-        calcOverlay.hidden = false
+        calcOverlay.isHidden = false
     }
-    func undoTapped(p1: Bool) {
+    func undoTapped(_ p1: Bool) {
         let undoButton = p1 ? p1UndoButton : p2UndoButton
         let clearButton = p1 ? p1ClearButton : p2ClearButton
         let first = p1 ? p1First : p2First
@@ -116,22 +116,22 @@ class ViewController: UIViewController {
         } else  {
             num = p2Undos.pop()
         }
-        first.text = String(format: numFormat, Int(first.text!)! - num)
+        first?.text = String(format: numFormat, Int(first!.text!)! - num)
         if (p1 ? p1Undos : p2Undos).isEmpty() {
-            undoButton.enabled = false
-            clearButton.enabled = false
+            undoButton?.isEnabled = false
+            clearButton?.isEnabled = false
         }
     }
-    func clearTapped(p1: Bool) {
+    func clearTapped(_ p1: Bool) {
         let undoButton = p1 ? p1UndoButton : p2UndoButton
         let clearButton = p1 ? p1ClearButton : p2ClearButton
         let first = p1 ? p1First : p2First
         let second = p1 ? p1Second : p2Second
         let third = p1 ? p1Third : p2Third
         
-        first.text = String(format: numFormat, 000)
-        second.text = String(format: numFormat, 000)
-        third.text = String(format: numFormat, 000)
+        first?.text = String(format: numFormat, 000)
+        second?.text = String(format: numFormat, 000)
+        third?.text = String(format: numFormat, 000)
         if p1 {
             p1Undos.clear()
             p1Stage = 0
@@ -139,8 +139,8 @@ class ViewController: UIViewController {
             p2Undos.clear()
             p2Stage = 0
         }
-        undoButton.enabled = false
-        clearButton.enabled = false
+        undoButton?.isEnabled = false
+        clearButton?.isEnabled = false
     }
     
     // Calculator Actions
@@ -154,7 +154,7 @@ class ViewController: UIViewController {
     @IBAction func calc8Tapped(sender: AnyObject) { calcNumTapped(8) }
     @IBAction func calc9Tapped(sender: AnyObject) { calcNumTapped(9) }
     @IBAction func calc0Tapped(sender: AnyObject) { calcNumTapped(0) }
-    func calcNumTapped(num: Int) {
+    func calcNumTapped(_ num: Int) {
         calcDisplay.text = String(format: numFormat, (Int(calcDisplay.text!)!*10 + num) % 1000)
     }
     @IBAction func calcSubmitTapped(sender: AnyObject) {
@@ -189,7 +189,7 @@ class ViewController: UIViewController {
             return
         }
         
-        calcOverlay.hidden = true
+        calcOverlay.isHidden = true
         
         let num = Int(calcDisplay.text!)!
         let sum = Int(text!.text!)! + num
@@ -199,11 +199,11 @@ class ViewController: UIViewController {
         } else  {
             p2Undos.push(num)
         }
-        if !undoButton.enabled {
-            undoButton.enabled = true
+        if !undoButton!.isEnabled {
+            undoButton?.isEnabled = true
         }
-        if !clearButton.enabled {
-            clearButton.enabled = true
+        if !clearButton!.isEnabled {
+            clearButton?.isEnabled = true
         }
         
         // Check winning condition
