@@ -47,6 +47,7 @@
 		4B3838781F874D6B0072EA01 /* GinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B38387C1F874D6B0072EA01 /* GinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GinUITests.swift; sourceTree = "<group>"; };
 		4B38387E1F874D6B0072EA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B8EDBBD23CC356200F99D74 /* Gin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gin.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		4B38385B1F874D6B0072EA01 /* Gin */ = {
 			isa = PBXGroup;
 			children = (
+				4B8EDBBD23CC356200F99D74 /* Gin.entitlements */,
 				4B38385C1F874D6B0072EA01 /* AppDelegate.swift */,
 				4B38385E1F874D6B0072EA01 /* ViewController.swift */,
 				4B3838601F874D6B0072EA01 /* Main.storyboard */,
@@ -210,6 +212,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -402,11 +405,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Gin/Gin.entitlements;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = L9GDAR3R36;
 				INFOPLIST_FILE = Gin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.christopherwilliams.Gin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -415,11 +421,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Gin/Gin.entitlements;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = L9GDAR3R36;
 				INFOPLIST_FILE = Gin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.christopherwilliams.Gin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
